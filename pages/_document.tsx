@@ -17,7 +17,7 @@ class MyDocument extends Document {
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-PT10Y2SNBF"
 					></script>
-					<script src="scripts/google-analytics.js"></script>
+					<script src="/scripts/google-analytics.js"></script>
 				</Head>
 				{/* <div className="flex items-center text-base font-medium space-x-4 fixed bottom-12 right-12 px-5 py-3 bg-primary-color bg-opacity-50 rounded-md cursor-pointer hover:text-primary-text hover:bg-opacity-100">
 					<p>Back to top</p>

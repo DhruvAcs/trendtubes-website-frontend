@@ -13,7 +13,7 @@ const AuthDataWrapper = ({
 	permissions?: string[];
 	children: any;
 }) => {
-	console.log('AUTH DATA WRAPPER', user);
+	// console.log('AUTH DATA WRAPPER', user);
 	if (user && Object.keys(user).length && user._id) {
 		if (
 			permissions &&

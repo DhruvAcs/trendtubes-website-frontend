@@ -141,7 +141,7 @@ const HomePage = () => {
 								<>
 									<section className="px-6.25% lg:px-15% grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 h-fit lg:h-screen relative">
 										<div className="flex items-center w-64 lg:w-auto mt-30 lg:mt-0">
-											<img src="static/undraw-social-growth.svg" />
+											<img src="static/undraw-final.png" />
 										</div>
 										<div className="w-full flex items-center">
 											<div>

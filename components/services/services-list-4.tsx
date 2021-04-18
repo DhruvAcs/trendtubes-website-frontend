@@ -1,22 +1,8 @@
-import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '../button';
 import { PromiseFn, useAsync } from 'react-async';
 import { BackendApi } from '../../utils/backend-api';
-import {
-	faInstagram,
-	faTiktok,
-	faTwitch,
-	faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
 import { capitalizeFirst } from '../../utils/general-utils';
-import {
-	faInfoCircle,
-	faQuestion,
-	faQuestionCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import { AxiosResponse } from 'axios';
+import { useEffect, useState } from 'react';
 // import { default as faker } from 'faker';
 
 const fetchServices: PromiseFn<any> = async () => {
@@ -101,7 +87,7 @@ const ServicesListApp = () => {
 													),
 												] as string[])
 													.sort()
-													.sort((a, b) => {
+													.sort((a) => {
 														if (a == 'Other') {
 															return 1;
 														}
@@ -157,7 +143,7 @@ const ServicesListApp = () => {
 										),
 									] as string[])
 										.sort()
-										.sort((a, b) => {
+										.sort((a) => {
 											if (a == 'Other') {
 												return 1;
 											}
@@ -176,13 +162,13 @@ const ServicesListApp = () => {
 										),
 									] as string[])
 										.sort()
-										.sort((a, b) => {
+										.sort((a) => {
 											if (a == 'Other') {
 												return 1;
 											}
 											return -1;
 										})
-										.map((category, index) => {
+										.map((category) => {
 											return (
 												<>
 													<div className="pb-2 border-b-2 border-primary-border">

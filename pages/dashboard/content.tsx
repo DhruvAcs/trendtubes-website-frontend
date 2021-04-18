@@ -1,77 +1,17 @@
 import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
-import Header from '../../components/header';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { createRef, useEffect, useState } from 'react';
 // import { default as faker } from 'faker';
-import faker, { lorem } from 'faker';
-import Link from 'next/link';
-import Footer from '../../components/footer';
-import {
-	CarouselProvider,
-	Slider,
-	Slide,
-	ButtonBack,
-	ButtonNext,
-} from 'pure-react-carousel';
-import {
-	cIconSrc,
-	javaIconSrc,
-	mySQLIconSrc,
-	pythonIconSrc,
-} from '../../utils/constants';
 import Sidebar from '../../components/sidebar';
-import {
-	faIdBadge,
-	faIdCard,
-	faCheckCircle,
-	faTimesCircle,
-	faLayerGroup,
-	faStream,
-	faSignInAlt,
-	faCog,
-	faServer,
-	faBox,
-	faWrench,
-	faGlobe,
-	faCoins,
-	faBoxOpen,
-	faTerminal,
-	faCode,
-	faBrush,
-	faPaintBrush,
-	faPaperPlane,
-	faGlobeAmericas,
-	faPlus,
-	faEdit,
-} from '@fortawesome/free-solid-svg-icons';
-import { Button, OutlineButton } from '../../components/button';
-import {
-	faDiscord,
-	faSpeakerDeck,
-	faTiktok,
-	faTwitch,
-	faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-	faBell,
-	faComments,
-	faLightbulb,
-	faUserCircle,
-} from '@fortawesome/free-regular-svg-icons';
-import UserLink from '../../components/userlink';
-import DashboardContentHomeTab from '../../components/dashboard/content/dashboard-content-home-tab';
 import { AsyncCMSData } from '../../components/cms-data-component';
 import { capitalizeFirst } from '../../utils/general-utils';
-import Markdown from 'markdown-to-jsx';
-import tailwindConfig from '../../tailwind.config';
 import { authDataCtx, AuthDataWrapper } from '../../auth/auth-data';
 import * as _ from 'lodash';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../utils/backend-api';
 import Popup from 'reactjs-popup';
 
-const DashboardContentPage = ({ user, cookie }) => {
-	const headerRef = createRef<HTMLDivElement>();
+const DashboardContentPage = ({ user }) => {
+	// const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 	// const [currentTab, setCurrentTab] = useState('home');
 

@@ -1,7 +1,5 @@
-import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '../button';
 import { PromiseFn, useAsync } from 'react-async';
 import { BackendApi } from '../../utils/backend-api';
 import {
@@ -11,12 +9,7 @@ import {
 	faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { capitalizeFirst } from '../../utils/general-utils';
-import {
-	faInfoCircle,
-	faQuestion,
-	faQuestionCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import { AxiosResponse } from 'axios';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 // import { default as faker } from 'faker';
 
 const fetchAccounts: PromiseFn<any> = async ({ filters }) => {
@@ -32,7 +25,7 @@ const fetchAccounts: PromiseFn<any> = async ({ filters }) => {
 		throw new Error();
 	return accountsResponse.data
 		.map(
-			(account, index) => {
+			(account) => {
 				return account;
 			}
 			// sellixCacheResponse.data[index]

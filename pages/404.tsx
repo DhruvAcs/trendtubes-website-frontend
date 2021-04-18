@@ -1,36 +1,6 @@
 import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import Footer from '../components/footer';
-import {
-	CarouselProvider,
-	Slider,
-	Slide,
-	ButtonBack,
-	ButtonNext,
-} from 'pure-react-carousel';
-import {
-	cIconSrc,
-	javaIconSrc,
-	mySQLIconSrc,
-	pythonIconSrc,
-} from '../utils/constants';
-import Sidebar from '../components/sidebar';
-import {
-	faIdBadge,
-	faIdCard,
-	faCheckCircle,
-	faTimesCircle,
-	faEllipsisH,
-	faSearch,
-	faLayerGroup,
-} from '@fortawesome/free-solid-svg-icons';
-import moment from 'moment';
-import { faCommentDots } from '@fortawesome/free-regular-svg-icons';
-import { faJava, faJs, faPython } from '@fortawesome/free-brands-svg-icons';
-import { OutlineButton } from '../components/button';
 import MobileHeader from '../components/mobile-header';
 
 const FourOFourPage = () => {

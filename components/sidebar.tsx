@@ -1,31 +1,14 @@
 import {
-	faHospital,
-	faIdBadge,
-	faIdCard,
-} from '@fortawesome/free-regular-svg-icons';
-import {
 	faBox,
-	faBoxOpen,
-	faCode,
 	faCog,
-	faFile,
-	faFileAlt,
-	faFileInvoice,
-	faFileInvoiceDollar,
-	faHandsHelping,
 	faHome,
 	faSignOutAlt,
 	faSitemap,
-	faTerminal,
 	faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
-import { authDataCtx } from '../auth/auth-data';
 import { BackendApi } from '../utils/backend-api';
-import { destroyCookie } from 'nookies';
-
-import Cookies from 'js-cookie';
 const TABS = [
 	// {
 	// 	name: 'Dashboard',

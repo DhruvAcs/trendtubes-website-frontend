@@ -1,5 +1,3 @@
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import React from 'react';
 

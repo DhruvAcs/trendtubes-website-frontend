@@ -1,85 +1,18 @@
 import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
-import Header from '../../../../components/header';
+import React, { createRef, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { default as faker } from 'faker';
-import faker, { lorem } from 'faker';
-import Link from 'next/link';
-import Footer from '../../../../components/footer';
-import {
-	CarouselProvider,
-	Slider,
-	Slide,
-	ButtonBack,
-	ButtonNext,
-} from 'pure-react-carousel';
-import {
-	cIconSrc,
-	javaIconSrc,
-	mySQLIconSrc,
-	pythonIconSrc,
-} from '../../../../utils/constants';
 import Sidebar from '../../../../components/sidebar';
-import {
-	faIdBadge,
-	faIdCard,
-	faCheckCircle,
-	faTimesCircle,
-	faLayerGroup,
-	faStream,
-	faSignInAlt,
-	faCog,
-	faServer,
-	faBox,
-	faWrench,
-	faGlobe,
-	faCoins,
-	faBoxOpen,
-	faTerminal,
-	faCode,
-	faBrush,
-	faPaintBrush,
-	faPaperPlane,
-	faGlobeAmericas,
-	faPlus,
-	faEdit,
-	faChevronRight,
-	faChevronDown,
-	faArrowLeft,
-	faInfo,
-	faInfoCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-	faDiscord,
-	faSpeakerDeck,
-	faTiktok,
-	faTwitch,
-	faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-	faBell,
-	faComments,
-	faLightbulb,
-	faUserCircle,
-} from '@fortawesome/free-regular-svg-icons';
-import UserLink from '../../../../components/userlink';
-import { Button, OutlineButton } from '../../../../components/button';
-import tailwindConfig from '../../../../tailwind.config';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 import { useRouter } from 'next/router';
-import { AccountProductData } from '../../../../components/dashboard/accounts/dashboard-account-data';
-import {
-	capitalizeFirst,
-	getPlatformIcon,
-} from '../../../../utils/general-utils';
-import OutsideClickHandler from 'react-outside-click-handler';
-import { ServiceProductData } from '../../../../components/dashboard/services/dashboard-service-data';
+import { capitalizeFirst } from '../../../../utils/general-utils';
 import { BackendApi } from '../../../../utils/backend-api';
 import Popup from 'reactjs-popup';
 import { authDataCtx, AuthDataWrapper } from '../../../../auth/auth-data';
 import { StaffUserData } from '../../../../components/dashboard/settings/dashboard-staff-data';
 
 const DashboardSettingsStaffEditPage = ({ user }) => {
-	const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	// const [isTitleDropdownActive, setIsTitleDropdownActive] = useState<boolean>(
@@ -89,11 +22,6 @@ const DashboardSettingsStaffEditPage = ({ user }) => {
 	// 	isCategoryDropdownActive,
 	// 	setIsCategoryDropdownActive,
 	// ] = useState<boolean>(false);
-	const [editedServiceData, setEditedServiceData] = useState<any>({});
-	const [
-		isProductTypeDropdownActive,
-		setProductTypeDropdownActive,
-	] = useState<boolean>(false);
 
 	useEffect(() => {
 		// mainContentRef.current!.style.marginTop = `${
@@ -109,14 +37,14 @@ const DashboardSettingsStaffEditPage = ({ user }) => {
 		setIsLoaded(true);
 	}, [router.isReady]);
 
-	const handleFormChange = (e) => {
-		updateFormData({
-			...formData,
+	// const handleFormChange = (e) => {
+	// 	updateFormData({
+	// 		...formData,
 
-			// Trimming any whitespace
-			[e.target.name]: e.target.value.trim(),
-		});
-	};
+	// 		// Trimming any whitespace
+	// 		[e.target.name]: e.target.value.trim(),
+	// 	});
+	// };
 	const [hasEditedFormData, setHasEditedFormData] = useState<boolean>(false);
 	const [formData, updateFormData] = React.useState<{ permissions: {} }>({
 		permissions: {},

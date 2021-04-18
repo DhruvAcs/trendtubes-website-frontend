@@ -113,9 +113,9 @@ hr {
 ul.list-disc > li:before {
 	content: '• ';
 }
-ul.list-disc > li {
-	/* display: inline-block; */
-}
+/* ul.list-disc > li { */
+/* display: inline-block; */
+/* } */
 
 /* hr.vertical {
 	@apply border-l-2;

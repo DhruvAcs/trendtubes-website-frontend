@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 
 const UserLink = ({
 	className,
@@ -10,11 +10,11 @@ const UserLink = ({
 	children?: ReactElement;
 	name?: string;
 }) => {
-	const newChildren = children ? (
-		React.cloneElement(children, { className: className })
-	) : (
-		<div></div>
-	);
+	// const newChildren = children ? (
+	// 	React.cloneElement(children, { className: className })
+	// ) : (
+	// 	<div></div>
+	// );
 	return (
 		<Link href="/users/1">
 			{children ? (

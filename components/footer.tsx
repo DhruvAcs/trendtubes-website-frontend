@@ -1,14 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faFacebook,
-	faGithub,
-	faInstagram,
-	faLinkedin,
-	faTwitter,
-	faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
-import { Button } from './button';
 import { findSubPath } from '../utils/general-utils';
 
 const Footer = (props: { cmsData?: any }) => {

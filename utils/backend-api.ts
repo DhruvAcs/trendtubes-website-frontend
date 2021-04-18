@@ -1,5 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import { removeCookies } from 'cookies-next';
+import axios from 'axios';
 
 const API_PREURL = 'http://localhost:3005';
 axios.defaults.withCredentials = true;

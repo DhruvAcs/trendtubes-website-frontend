@@ -2,17 +2,16 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { useState } from 'react';
 import { UsersData } from './dashboard-settings-tabs-data';
 
 const DashboardContentStaffTab = ({ user }) => {
-	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+	// const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const router = useRouter();
 	useEffect(() => {
 		if (!router.isReady) return;
 
 		// codes using router.query
-		setIsLoaded(true);
+		// setIsLoaded(true);
 		console.log(router.query);
 	}, [router.isReady]);
 
@@ -36,7 +35,7 @@ const DashboardContentStaffTab = ({ user }) => {
 							if (error)
 								return 'Error loading staff accounts: ' + error.toString();
 							if (data) {
-								return data.map((staffUser, index) => {
+								return data.map((staffUser) => {
 									return (
 										<li className="last:border-0 border-b-2 border-primary-border p-4 flex items-center justify-between">
 											<div className="flex items-center space-x-4">

@@ -1,11 +1,8 @@
-import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '../../button';
 import { PromiseFn, useAsync } from 'react-async';
 import { BackendApi } from '../../../utils/backend-api';
 import {
-	faInstagram,
 	faTiktok,
 	faTwitch,
 	faYoutube,
@@ -14,11 +11,8 @@ import { capitalizeFirst } from '../../../utils/general-utils';
 import {
 	faEdit,
 	faInfoCircle,
-	faQuestion,
-	faQuestionCircle,
 	faTrash,
 } from '@fortawesome/free-solid-svg-icons';
-import { AxiosResponse } from 'axios';
 import tailwindConfig from '../../../tailwind.config';
 // import { default as faker } from 'faker';
 

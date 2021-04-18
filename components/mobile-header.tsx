@@ -1,29 +1,14 @@
-import React, {
-	ForwardedRef,
-	forwardRef,
-	MutableRefObject,
-	RefObject,
-	useState,
-} from 'react';
-import Link from 'next/link';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {} from '@fortawesome/free-regular-svg-icons';
-import {
-	faBell,
-	faUser,
-	faBars,
-	faSearch,
-	faPaperPlane,
-	faTimes,
-} from '@fortawesome/free-solid-svg-icons';
-import { Button, OutlineButton } from './button';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 // const Header = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => (
 const MobileHeader = (props: {
 	onMobileNavOpen?: () => any;
 	onMobileNavClose?: () => any;
 }) => {
-	const [showMobileModal, setShowMobileModal] = useState<boolean>(false);
+	// const [showMobileModal, setShowMobileModal] = useState<boolean>(false);
 	return (
 		<header
 			className="fixed top-0 w-full h-full flex flex-col p-8 z-50 bg-secondary-bg border-b-1 border-primary-border overflow-x-hidden" //fixed

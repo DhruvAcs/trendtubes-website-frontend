@@ -1,15 +1,9 @@
-import React, {
-	ForwardedRef,
-	forwardRef,
-	MutableRefObject,
-	RefObject,
-} from 'react';
-import Link from 'next/link';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const Header = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => (
+const Header = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => (
 	<header
 		className="flex flex-col p-6 py-5 z-50 bg-secondary-bg border-b-1 border-primary-border" //fixed
 		ref={ref}

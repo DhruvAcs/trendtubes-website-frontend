@@ -1,79 +1,18 @@
 import Head from 'next/head';
-import React, { createRef, useEffect, useRef, useState } from 'react';
-import Header from '../../../components/header';
+import React, { createRef, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { default as faker } from 'faker';
-import faker, { lorem } from 'faker';
-import Link from 'next/link';
-import Footer from '../../../components/footer';
-import {
-	CarouselProvider,
-	Slider,
-	Slide,
-	ButtonBack,
-	ButtonNext,
-} from 'pure-react-carousel';
-import {
-	cIconSrc,
-	javaIconSrc,
-	mySQLIconSrc,
-	pythonIconSrc,
-} from '../../../utils/constants';
+
 import Sidebar from '../../../components/sidebar';
-import {
-	faIdBadge,
-	faIdCard,
-	faCheckCircle,
-	faTimesCircle,
-	faLayerGroup,
-	faStream,
-	faSignInAlt,
-	faCog,
-	faServer,
-	faBox,
-	faWrench,
-	faGlobe,
-	faCoins,
-	faBoxOpen,
-	faTerminal,
-	faCode,
-	faBrush,
-	faPaintBrush,
-	faPaperPlane,
-	faGlobeAmericas,
-	faPlus,
-	faEdit,
-	faChevronRight,
-	faChevronDown,
-	faArrowLeft,
-	faInfo,
-	faInfoCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-	faDiscord,
-	faSpeakerDeck,
-	faTiktok,
-	faTwitch,
-	faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-	faBell,
-	faComments,
-	faLightbulb,
-	faUserCircle,
-} from '@fortawesome/free-regular-svg-icons';
-import UserLink from '../../../components/userlink';
-import { Button, OutlineButton } from '../../../components/button';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import { OutlineButton } from '../../../components/button';
 import tailwindConfig from '../../../tailwind.config';
 import { useRouter } from 'next/router';
 import { AccountProductData } from '../../../components/dashboard/accounts/dashboard-account-data';
-import { capitalizeFirst, getPlatformIcon } from '../../../utils/general-utils';
-import OutsideClickHandler from 'react-outside-click-handler';
 import { BackendApi } from '../../../utils/backend-api';
 import { authDataCtx, AuthDataWrapper } from '../../../auth/auth-data';
 
 const DashboardAccountsAccountPage = ({ user }) => {
-	const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
@@ -110,9 +49,9 @@ const DashboardAccountsAccountPage = ({ user }) => {
 		stock: '',
 		accounts: '',
 	});
-	const [isPopupOpen, setPopupOpen] = useState(false);
-	const [popupMessage, setPopupMessage] = useState('Default message');
-	const closePopup = () => setPopupOpen(false);
+	const [, setPopupOpen] = useState(false);
+	const [, setPopupMessage] = useState('Default message');
+	// const closePopup = () => setPopupOpen(false);
 
 	return (
 		<>
@@ -174,7 +113,7 @@ const DashboardAccountsAccountPage = ({ user }) => {
 														// }
 														// formData['type'] == 'accounts' && delete formData['stock'];
 														try {
-															const apiResponse = await BackendApi.editAccount(
+															await BackendApi.editAccount(
 																data.sellixProductId,
 																formData
 															);

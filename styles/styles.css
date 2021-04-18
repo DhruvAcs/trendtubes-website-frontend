@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+
+/* @import url('https://fonts.googleapis.com/css?family=Barlow%7CBarlow+Condensed');
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* html {
+	min-height: 100%;
+	height: 100%;
+} */
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+/* #__next {
+	min-height: 100%;
+	height: 100%;
+} */
+
+body {
+	margin: 0 auto;
+	min-width: fit-content;
+	/* padding: 0; */
+	/* min-height: 100%;
+	height: 100%; */
+	@apply text-primary-text;
+	/* @apply text-base; */
+	@apply text-lg;
+	@apply font-base;
+	@apply bg-primary-bg;
+	@apply text-secondary-text;
+	scroll-behavior: smooth;
+	/* @apply leading-relaxed; */
+}
+
+p {
+	@apply leading-loose;
+}
+
+pre,
+pre > * {
+	display: inline !important;
+	width: fit-content;
+	@apply break-all;
+	@apply font-base;
+	@apply whitespace-pre-wrap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading;
+	@apply font-bold;
+	/* @apply tracking-tight; */
+	@apply text-primary-text;
+	/* @apply m-0; */
+}
+
+h1 {
+	@apply text-5xl;
+	@apply leading-normal;
+}
+
+h2 {
+	@apply text-4xl;
+	@apply leading-normal;
+}
+
+h3 {
+	@apply text-3xl;
+	@apply leading-normal;
+}
+
+h4 {
+	@apply text-2xl;
+}
+
+h5 {
+	@apply text-xl;
+}
+
+h6 {
+	@apply text-lg;
+}
+
+a {
+	/* @apply font-bold; */
+	@apply text-primary-text;
+	@apply cursor-pointer;
+}
+
+/* a:not(.button):hover {
+	@apply opacity-75;
+} */
+
+main section {
+	@apply z-10;
+}
+
+hr {
+	@apply border-primary-border;
+	/* @apply border-b-2; */
+	@apply border-b-1;
+}
+
+ul.list-disc > li:before {
+	content: '• ';
+}
+ul.list-disc > li {
+	/* display: inline-block; */
+}
+
+/* hr.vertical {
+	@apply border-l-2;
+	@apply border-primary-border;
+	width: 5px;
+	height: 100%;
+	@apply bg-primary-border;
+} */
+
+input {
+	@apply placeholder-secondary-text;
+	@apply outline-none;
+}
+
+/* ::placeholder {
+	@apply text-placeholder-text;
+} */
+
+/* flickity js carousel */
+.carousel-cell {
+	/* width: 66%;
+	height: 200px;
+	margin-right: 10px;
+	background: #8c8;
+	border-radius: 5px; */
+	counter-increment: carousel-cell;
+}
+
+/* cell number */
+/* .carousel-cell:before {
+	display: block;
+	text-align: center;
+	content: counter(carousel-cell);
+	line-height: 200px;
+	font-size: 80px;
+	color: white;
+} */
+
+@layer components {
+	.input-base {
+		@apply pb-2 bg-transparent border-b-2 outline-none border-primary-border text-primary-text focus:border-primary-text;
+	}
+}
+
+@tailwind utilities;

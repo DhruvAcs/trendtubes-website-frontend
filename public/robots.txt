@@ -1,0 +1,6 @@
+Sitemap: https://trendtubes.com/public/sitemap
+
+User-agent: *
+Allow: /*
+
+Disallow: /dashboard/*

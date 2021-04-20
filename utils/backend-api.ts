@@ -89,11 +89,12 @@ const BackendApi = {
 		});
 	},
 	getAuthInfo: (cookie: string) => {
-		return axios.get(API_PREURL + '/auth/info', {
-			headers: {
-				cookie: cookie,
-			},
-		});
+		// return axios.get(API_PREURL + '/auth/info', {
+		// 	headers: {
+		// 		cookie: cookie,
+		// 	},
+		// });
+		return axios.get(API_PREURL + '/auth/info');
 	},
 	authLogout: () => {
 		// var cookie = ctx.req.headers.cookie || '';

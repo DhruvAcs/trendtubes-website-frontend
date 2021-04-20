@@ -56,11 +56,13 @@ const authDataCtx = async (ctx: any) => {
 	// console.log('COOKIE CTX', ctx.req.headers.cookie);
 	var cookie = ctx?.req?.headers?.cookie;
 	try {
-		const authInfoResponse = await BackendApi.getAuthInfo(
-			ctx?.req?.headers?.cookie || ''
-		).catch(() => {
-			return { data: {} };
-		});
+		const authInfoResponse = await BackendApi
+			.getAuthInfo
+			// ctx?.req?.headers?.cookie || ''
+			()
+			.catch(() => {
+				return { data: {} };
+			});
 		if (authInfoResponse && authInfoResponse.data) {
 			user = authInfoResponse?.data;
 		}

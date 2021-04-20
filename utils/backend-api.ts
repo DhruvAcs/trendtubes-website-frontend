@@ -81,14 +81,15 @@ const BackendApi = {
 	deleteUser: (id) => {
 		return axios.delete(API_PREURL + '/users/' + id);
 	},
-	generateAuthCode: (cookie: string) => {
-		return axios.get(API_PREURL + '/auth/generate-code', {
-			headers: {
-				cookie: cookie,
-			},
-		});
+	generateAuthCode: () => {
+		// return axios.get(API_PREURL + '/auth/generate-code', {
+		// 	headers: {
+		// 		cookie: cookie,
+		// 	},
+		// });
+		return axios.get(API_PREURL + '/auth/generate-code');
 	},
-	getAuthInfo: (cookie: string) => {
+	getAuthInfo: () => {
 		// return axios.get(API_PREURL + '/auth/info', {
 		// 	headers: {
 		// 		cookie: cookie,

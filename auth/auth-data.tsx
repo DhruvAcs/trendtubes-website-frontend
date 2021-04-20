@@ -39,7 +39,7 @@ const AuthDataWrapper = ({
 						<p>You are not authenticated. Access denied.</p>
 						<Button
 							className="space-x-2 flex items-center mt-4"
-							href="http://localhost:3005/auth"
+							href="https://api.trendtubes.com/auth"
 						>
 							<FontAwesomeIcon icon={faDiscord} />
 							<span>Login via Discord</span>

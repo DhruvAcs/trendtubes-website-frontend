@@ -46,7 +46,7 @@ const DashboardContentPage = ({ user }) => {
 							<div>
 								<Button
 									className="space-x-2"
-									href="localhost:3005/auth/generate-code"
+									href="https://api.trendtubes.com/auth/generate-code"
 								>
 									<FontAwesomeIcon icon={faPlus} />
 									<p>Add Staff Account</p>

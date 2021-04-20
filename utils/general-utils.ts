@@ -40,6 +40,10 @@ function isValidEmail(email) {
 	return re.test(String(email).toLowerCase());
 }
 
+function isValidDiscord(discord: string) {
+	return /^((.+?)#\d{4})/g.test(discord);
+}
+
 const findSubPath = (base, path) => {
 	return base.subPaths.find(
 		(subPath) => subPath.path.toLowerCase() == path.toLowerCase()
@@ -51,5 +55,6 @@ export {
 	getPlatformIcon,
 	isValidURL,
 	isValidEmail,
+	isValidDiscord,
 	findSubPath,
 };

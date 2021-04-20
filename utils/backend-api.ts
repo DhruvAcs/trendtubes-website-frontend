@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_PREURL = 'https://api.trendtubes.com';
+// const API_PREURL = 'http://localhost:3005';
 axios.defaults.withCredentials = true;
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
@@ -104,6 +105,12 @@ const BackendApi = {
 	},
 	isAuthenticated: () => {
 		return true;
+	},
+	addAuthAccess(discord) {
+		return axios.post(API_PREURL + '/auth/access', {
+			username: discord.trim().split('#')[0],
+			discriminator: discord.trim().split('#')[1],
+		});
 	},
 };
 

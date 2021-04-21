@@ -8,7 +8,7 @@ import { Button, OutlineButton } from '../../../../components/button';
 import tailwindConfig from '../../../../tailwind.config';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../../../utils/backend-api';
-import { authDataCtx, AuthDataWrapper } from '../../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../../auth/auth-data';
 
 const DashboardStaffAccountDeletePage = ({ user }) => {
 	const mainContentRef = createRef<HTMLDivElement>();
@@ -41,7 +41,7 @@ const DashboardStaffAccountDeletePage = ({ user }) => {
 				<title>Delete Staff Account - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['DELETE_STAFF_ACCOUNT']}>
+			<AuthDataWrapper permissions={['DELETE_STAFF_ACCOUNT']}>
 				<main
 					className="w-full grid grid-cols-8 h-screen relative"
 					ref={mainContentRef}
@@ -110,6 +110,6 @@ const DashboardStaffAccountDeletePage = ({ user }) => {
 		</>
 	);
 };
-DashboardStaffAccountDeletePage.getInitialProps = authDataCtx;
+// DashboardStaffAccountDeletePage.getInitialProps = authDataCtx;
 
 export default DashboardStaffAccountDeletePage;

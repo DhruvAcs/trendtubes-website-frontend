@@ -12,7 +12,7 @@ import { AccountProductData } from '../../../components/dashboard/accounts/dashb
 import { BackendApi } from '../../../utils/backend-api';
 import { authDataCtx, AuthDataWrapper } from '../../../auth/auth-data';
 
-const DashboardAccountsAccountPage = ({ user }) => {
+const DashboardAccountsAccountPage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
@@ -64,7 +64,7 @@ const DashboardAccountsAccountPage = ({ user }) => {
 				<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" />
 				<title>Edit Account - Dashboard</title>
 			</Head>
-			<AuthDataWrapper user={user} permissions={['EDIT_ACCOUNT']}>
+			<AuthDataWrapper permissions={['EDIT_ACCOUNT']}>
 				{/* <Header ref={headerRef} /> */}
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />

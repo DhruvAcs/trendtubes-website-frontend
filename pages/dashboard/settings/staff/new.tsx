@@ -7,9 +7,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../../../utils/backend-api';
 import Popup from 'reactjs-popup';
-import { authDataCtx, AuthDataWrapper } from '../../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../../auth/auth-data';
 
-const DashboardStaffAccountNewPage = ({ user }) => {
+const DashboardStaffAccountNewPage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [, setIsLoaded] = useState<boolean>(false);
 
@@ -56,7 +56,7 @@ const DashboardStaffAccountNewPage = ({ user }) => {
 				<title>New Staff Account - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['CREATE_STAFF_ACCOUNT']}>
+			<AuthDataWrapper permissions={['CREATE_STAFF_ACCOUNT']}>
 				<main
 					className="w-full grid grid-cols-8 h-screen relative"
 					ref={mainContentRef}
@@ -184,6 +184,6 @@ const DashboardStaffAccountNewPage = ({ user }) => {
 		</>
 	);
 };
-DashboardStaffAccountNewPage.getInitialProps = authDataCtx;
+// DashboardStaffAccountNewPage.getInitialProps = authDataCtx;
 
 export default DashboardStaffAccountNewPage;

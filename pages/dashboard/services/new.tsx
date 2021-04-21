@@ -7,9 +7,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../../utils/backend-api';
 import Popup from 'reactjs-popup';
-import { authDataCtx, AuthDataWrapper } from '../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../auth/auth-data';
 
-const DashboardAccountsCreatePage = ({ user }) => {
+const DashboardAccountsCreatePage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [, setIsLoaded] = useState<boolean>(false);
 
@@ -59,7 +59,7 @@ const DashboardAccountsCreatePage = ({ user }) => {
 				<title>New Service - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['CREATE_SERVICE']}>
+			<AuthDataWrapper permissions={['CREATE_SERVICE']}>
 				<main
 					className="w-full grid grid-cols-8 h-screen relative"
 					ref={mainContentRef}
@@ -268,6 +268,6 @@ const DashboardAccountsCreatePage = ({ user }) => {
 		</>
 	);
 };
-DashboardAccountsCreatePage.getInitialProps = authDataCtx;
+// DashboardAccountsCreatePage.getInitialProps = authDataCtx;
 
 export default DashboardAccountsCreatePage;

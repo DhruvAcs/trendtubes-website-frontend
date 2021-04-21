@@ -2,9 +2,9 @@ import Head from 'next/head';
 import React, { createRef, useEffect } from 'react';
 
 import Sidebar from '../../components/sidebar';
-import { authDataCtx, AuthDataWrapper } from '../../auth/auth-data';
+import { AuthDataWrapper } from '../../auth/auth-data';
 
-const DashboardIndexPage = ({ user }) => {
+const DashboardIndexPage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 
 	useEffect(() => {
@@ -25,7 +25,7 @@ const DashboardIndexPage = ({ user }) => {
 				<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" />
 				<title>Home - Dashboard</title>
 			</Head>
-			<AuthDataWrapper user={user}>
+			<AuthDataWrapper>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8 h-screen scrollbar scrollbar-thin scrollbar-thumb-primary-color scrollbar-track-quartiary-bg pb-8">
@@ -76,7 +76,7 @@ const DashboardIndexPage = ({ user }) => {
 	);
 };
 
-DashboardIndexPage.getInitialProps = authDataCtx;
+// DashboardIndexPage.getInitialProps = authDataCtx;
 
 export default DashboardIndexPage;
 

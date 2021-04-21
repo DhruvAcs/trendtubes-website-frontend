@@ -6,9 +6,9 @@ import Sidebar from '../../components/sidebar';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../components/button';
 import { DashboardServicesListApp } from '../../components/dashboard/services/dashboard-services-list';
-import { authDataCtx, AuthDataWrapper } from '../../auth/auth-data';
+import { AuthDataWrapper } from '../../auth/auth-data';
 
-const DashboardIndexPage = ({ user }) => {
+const DashboardIndexPage = () => {
 	// const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 
@@ -30,7 +30,7 @@ const DashboardIndexPage = ({ user }) => {
 				<title>Services - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['EDIT_SERVICE']}>
+			<AuthDataWrapper permissions={['EDIT_SERVICE']}>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8">
@@ -57,7 +57,7 @@ const DashboardIndexPage = ({ user }) => {
 	);
 };
 
-DashboardIndexPage.getInitialProps = authDataCtx;
+// DashboardIndexPage.getInitialProps = authDataCtx;
 
 export default DashboardIndexPage;
 

@@ -9,10 +9,10 @@ import { useRouter } from 'next/router';
 import { capitalizeFirst } from '../../../../utils/general-utils';
 import { BackendApi } from '../../../../utils/backend-api';
 import Popup from 'reactjs-popup';
-import { authDataCtx, AuthDataWrapper } from '../../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../../auth/auth-data';
 import { StaffUserData } from '../../../../components/dashboard/settings/dashboard-staff-data';
 
-const DashboardSettingsStaffEditPage = ({ user }) => {
+const DashboardSettingsStaffEditPage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	// const [isTitleDropdownActive, setIsTitleDropdownActive] = useState<boolean>(
@@ -65,7 +65,7 @@ const DashboardSettingsStaffEditPage = ({ user }) => {
 				<title>Edit Staff Account - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['EDIT_SERVICE']}>
+			<AuthDataWrapper permissions={['EDIT_SERVICE']}>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8 h-screen overflow-y-scroll scrollbar scrollbar-thin scrollbar-thumb-primary-color scrollbar-track-quartiary-bg pb-8">
@@ -239,6 +239,6 @@ const DashboardSettingsStaffEditPage = ({ user }) => {
 		</>
 	);
 };
-DashboardSettingsStaffEditPage.getInitialProps = authDataCtx;
+// DashboardSettingsStaffEditPage.getInitialProps = authDataCtx;
 
 export default DashboardSettingsStaffEditPage;

@@ -2,9 +2,10 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+// import { AsyncUserData } from '../../../auth/auth-data';
 import { UsersData } from './dashboard-settings-tabs-data';
 
-const DashboardContentStaffTab = ({ user }) => {
+const DashboardContentStaffTab = ({ userData }) => {
 	// const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const router = useRouter();
 	useEffect(() => {
@@ -15,16 +16,26 @@ const DashboardContentStaffTab = ({ user }) => {
 		console.log(router.query);
 	}, [router.isReady]);
 
+	// const [userData, setUserData] = useState<any>();
+
+	if (!userData) {
+		return <p>Loading user data...</p>;
+	}
+
 	return (
+		// <AsyncUserData>
+		// 	{(isLoading, userData, dataError) => {
+		// 		if (userData) {
+
 		<div className="space-y-4">
 			<div className="w-full bg-secondary-bg rounded-lg">
 				{/* <div>
 					<p className="font-medium text-primary-text">Home Hero Title</p>
 					<textarea className="bg-tertiary-bg border-none rounded-md bg-transparent w-full mt-2 placeholder-secondary-text">
-						The Place For Professional Social Media Services
+					The Place For Professional Social Media Services
 					</textarea>
-				</div>
-				<div className="mt-4">
+					</div>
+					<div className="mt-4">
 					<p className="font-medium text-primary-text">Home Hero Description</p>
 					<textarea className="bg-tertiary-bg border-none rounded-md bg-transparent w-full mt-2 placeholder-secondary-text" />
 				</div> */}
@@ -52,7 +63,7 @@ const DashboardContentStaffTab = ({ user }) => {
 											</div>
 											<div>
 												<div className="flex items-center space-x-8">
-													{user._id != staffUser._id && (
+													{userData._id != staffUser._id && (
 														<a
 															className="space-x-2 text-primary-color"
 															href={`/dashboard/settings/staff/delete?id=${staffUser._id}`}
@@ -61,7 +72,7 @@ const DashboardContentStaffTab = ({ user }) => {
 															<span>Remove</span>
 														</a>
 													)}
-													{user._id != staffUser._id && (
+													{userData._id != staffUser._id && (
 														<a
 															className="space-x-2 text-secondary-text"
 															href={`/dashboard/settings/staff/${staffUser._id}`}
@@ -71,7 +82,7 @@ const DashboardContentStaffTab = ({ user }) => {
 														</a>
 													)}
 
-													{user._id == staffUser._id && (
+													{userData._id == staffUser._id && (
 														<p className="space-x-2 text-secondary-text">
 															YOUR ACCOUNT
 														</p>
@@ -87,6 +98,9 @@ const DashboardContentStaffTab = ({ user }) => {
 				</ul>
 			</div>
 		</div>
+		// 		}
+		// 	}}
+		// </AsyncUserData>
 	);
 };
 

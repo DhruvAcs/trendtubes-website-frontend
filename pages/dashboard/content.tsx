@@ -4,13 +4,13 @@ import React, { createRef, useEffect, useState } from 'react';
 import Sidebar from '../../components/sidebar';
 import { AsyncCMSData } from '../../components/cms-data-component';
 import { capitalizeFirst } from '../../utils/general-utils';
-import { authDataCtx, AuthDataWrapper } from '../../auth/auth-data';
+import { AuthDataWrapper } from '../../auth/auth-data';
 import * as _ from 'lodash';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../utils/backend-api';
 import Popup from 'reactjs-popup';
 
-const DashboardContentPage = ({ user }) => {
+const DashboardContentPage = () => {
 	// const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 	// const [currentTab, setCurrentTab] = useState('home');
@@ -49,7 +49,7 @@ const DashboardContentPage = ({ user }) => {
 				<title>Content - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['EDIT_CONTENT']}>
+			<AuthDataWrapper permissions={['EDIT_CONTENT']}>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8 h-screen scrollbar scrollbar-thin scrollbar-thumb-primary-color scrollbar-track-quartiary-bg pb-8">
@@ -237,7 +237,7 @@ const DashboardContentPage = ({ user }) => {
 	);
 };
 
-DashboardContentPage.getInitialProps = authDataCtx;
+// DashboardContentPage.getInitialProps = authDataCtx;
 
 export default DashboardContentPage;
 

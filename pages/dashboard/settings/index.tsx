@@ -7,9 +7,9 @@ import Sidebar from '../../../components/sidebar';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../../components/button';
 import { DashboardContentStaffTab } from '../../../components/dashboard/settings/dashboard-settings-tabs';
-import { authDataCtx, AuthDataWrapper } from '../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../auth/auth-data';
 
-const DashboardContentPage = ({ user }) => {
+const DashboardContentPage = () => {
 	// const headerRef = createRef<HTMLDivElement>();
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [currentTab, setCurrentTab] = useState('staff');
@@ -19,6 +19,7 @@ const DashboardContentPage = ({ user }) => {
 		// 	headerRef.current!.getBoundingClientRect().height
 		// }px)`;
 	}, []);
+	const [userData, setUserData] = useState<any>();
 
 	return (
 		<>
@@ -32,7 +33,7 @@ const DashboardContentPage = ({ user }) => {
 				<title>Settings - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user}>
+			<AuthDataWrapper dataCallback={(data) => setUserData(data)}>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8">
@@ -81,7 +82,7 @@ const DashboardContentPage = ({ user }) => {
 						</div>
 						<div className="mt-4">
 							{currentTab == 'staff' && (
-								<DashboardContentStaffTab user={user} />
+								<DashboardContentStaffTab userData={userData} />
 							)}
 						</div>
 					</section>
@@ -93,7 +94,7 @@ const DashboardContentPage = ({ user }) => {
 	);
 };
 
-DashboardContentPage.getInitialProps = authDataCtx;
+// DashboardContentPage.getInitialProps = authDataCtx;
 export default DashboardContentPage;
 
 // export const getStaticProps = async () => {

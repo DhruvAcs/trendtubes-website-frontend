@@ -8,9 +8,9 @@ import { Button, OutlineButton } from '../../../components/button';
 import tailwindConfig from '../../../tailwind.config';
 import { useRouter } from 'next/router';
 import { BackendApi } from '../../../utils/backend-api';
-import { authDataCtx, AuthDataWrapper } from '../../../auth/auth-data';
+import { AuthDataWrapper } from '../../../auth/auth-data';
 
-const DashboardAccountsDeletePage = ({ user }) => {
+const DashboardAccountsDeletePage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
@@ -41,7 +41,7 @@ const DashboardAccountsDeletePage = ({ user }) => {
 				<title>Delete Service - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper user={user} permissions={['DELETE_SERVICE']}>
+			<AuthDataWrapper permissions={['DELETE_SERVICE']}>
 				<main
 					className="w-full grid grid-cols-8 h-screen relative"
 					ref={mainContentRef}
@@ -107,6 +107,6 @@ const DashboardAccountsDeletePage = ({ user }) => {
 		</>
 	);
 };
-DashboardAccountsDeletePage.getInitialProps = authDataCtx;
+// DashboardAccountsDeletePage.getInitialProps = authDataCtx;
 
 export default DashboardAccountsDeletePage;

@@ -30,8 +30,8 @@ const DashboardIndexPage = ({ user }) => {
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8 h-screen scrollbar scrollbar-thin scrollbar-thumb-primary-color scrollbar-track-quartiary-bg pb-8">
 						<div>
-							<h3>Content Management</h3>
-							<p className="">Change the text on different pages</p>
+							<h3>Home</h3>
+							<p className="">This is the home page of the dashboard.</p>
 						</div>
 						<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
 							<div className="p-6 bg-secondary-bg rounded-md col-span-2">

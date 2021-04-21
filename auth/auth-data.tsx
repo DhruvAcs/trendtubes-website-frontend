@@ -13,7 +13,7 @@ const AuthDataWrapper = ({
 	permissions?: string[];
 	children: any;
 }) => {
-	// console.log('AUTH DATA WRAPPER', user);
+	console.log('AUTH DATA WRAPPER', user);
 	if (user && Object.keys(user).length && user._id) {
 		if (
 			permissions &&
@@ -53,7 +53,7 @@ const AuthDataWrapper = ({
 
 const authDataCtx = async (ctx: any) => {
 	var user = null;
-	// console.log('COOKIE CTX', ctx.req.headers.cookie);
+	console.log('COOKIE CTX', ctx.req.headers.cookie);
 	var cookie = ctx?.req?.headers?.cookie;
 	try {
 		const authInfoResponse = await BackendApi

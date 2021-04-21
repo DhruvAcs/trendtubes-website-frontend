@@ -29,8 +29,8 @@ const AuthDataWrapper = ({
 }) => {
 	return (
 		<AsyncUserData>
-			{(data, isLoading, error) => {
-				if (isLoading) {
+			{({ isPending, data, error }) => {
+				if (isPending) {
 					return <p>Loading user auth data...</p>;
 				}
 				if (error) {

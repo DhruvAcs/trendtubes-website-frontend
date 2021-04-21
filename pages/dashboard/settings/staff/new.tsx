@@ -70,7 +70,7 @@ const DashboardStaffAccountNewPage = () => {
 						</Popup>
 						<div className="flex items-center justify-between">
 							<div>
-								<a className="text-secondary-text" href="/dashboard/services">
+								<a className="text-secondary-text" href="/dashboard/settings">
 									<p className="space-x-2 text-base">
 										{/* <span>Accounts</span>
 								<FontAwesomeIcon icon={faChevronRight} />

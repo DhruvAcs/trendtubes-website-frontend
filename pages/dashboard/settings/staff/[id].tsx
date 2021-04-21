@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sidebar from '../../../../components/sidebar';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+import * as _ from 'lodash';
 import { useRouter } from 'next/router';
 import { capitalizeFirst } from '../../../../utils/general-utils';
 import { BackendApi } from '../../../../utils/backend-api';
@@ -123,7 +124,7 @@ const DashboardSettingsStaffEditPage = () => {
 														try {
 															const apiResponse = await BackendApi.editUser(
 																data._id,
-																formData
+																_.keys(_.pickBy(formData))
 															);
 															console.log(apiResponse.data);
 															setPopupMessage(

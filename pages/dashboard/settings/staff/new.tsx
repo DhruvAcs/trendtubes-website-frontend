@@ -131,11 +131,16 @@ const DashboardStaffAccountNewPage = () => {
 										</p>
 										<p className="text-base">Example: JohnDoe#9999</p>
 										{/* <div className="p-2 border-2 border-primary-border mt-4"></div> */}
-										<input
+										<textarea
 											className="w-full mt-4 bg-tertiary-bg border-none rounded-md"
+											// style={{
+											// 	height: '200px',
+											// 	minHeight: '200px',
+											// }}
 											style={{
-												height: '200px',
-												minHeight: '200px',
+												height: '40px',
+												minHeight: '40px',
+												maxHeight: '40px',
 											}}
 											defaultValue={''}
 											onChange={(e) => {
@@ -144,7 +149,7 @@ const DashboardStaffAccountNewPage = () => {
 											}}
 											name="discord"
 											required
-											pattern={'@?[^#@:]{2,32}#[0-9]{4}'}
+											// pattern={'@?[^#@:]{2,32}#[0-9]{4}'}
 										/>
 									</div>
 								</div>

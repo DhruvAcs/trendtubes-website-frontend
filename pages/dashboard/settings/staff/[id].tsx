@@ -125,7 +125,11 @@ const DashboardSettingsStaffEditPage = () => {
 															console.log(formData);
 															const apiResponse = await BackendApi.editUser(
 																data._id,
-																_.keys(_.pickBy(formData.permissions))
+																{
+																	permissions: _.keys(
+																		_.pickBy(formData.permissions)
+																	),
+																}
 															);
 															console.log(apiResponse.data);
 															setPopupMessage(

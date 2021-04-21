@@ -122,9 +122,10 @@ const DashboardSettingsStaffEditPage = () => {
 														// }
 														// formData['type'] == 'accounts' && delete formData['stock'];
 														try {
+															console.log(formData);
 															const apiResponse = await BackendApi.editUser(
 																data._id,
-																_.keys(_.pickBy(formData))
+																_.keys(_.pickBy(formData.permissions))
 															);
 															console.log(apiResponse.data);
 															setPopupMessage(

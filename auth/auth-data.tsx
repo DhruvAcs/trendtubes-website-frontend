@@ -34,7 +34,23 @@ const AuthDataWrapper = ({
 					return <p>Loading user auth data...</p>;
 				}
 				if (error) {
-					return <p>Error loading user auth data...</p>;
+					// return <p>Error loading user auth data...</p>;
+					return (
+						<main className="">
+							<div className="h-screen flex flex-col items-center justify-center">
+								<div className="p-6 bg-secondary-bg rounded-md flex flex-col items-center">
+									<p>You are not authenticated. Access denied.</p>
+									<Button
+										className="space-x-2 flex items-center mt-4"
+										href="https://api.trendtubes.com/auth"
+									>
+										<FontAwesomeIcon icon={faDiscord} />
+										<span>Login via Discord</span>
+									</Button>
+								</div>
+							</div>
+						</main>
+					);
 				}
 				if (data) {
 					dataCallback && dataCallback(data);

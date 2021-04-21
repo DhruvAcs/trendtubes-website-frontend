@@ -30,7 +30,7 @@ const DashboardAccountsPage = () => {
 				<title>Accounts - Dashboard</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
-			<AuthDataWrapper permissions={['EDIT_SERVICE']}>
+			<AuthDataWrapper permissions={['EDIT_ACCOUNT']}>
 				<main className="w-full grid grid-cols-8 h-screen" ref={mainContentRef}>
 					<Sidebar />
 					<section className="col-span-7 px-6.25% lg:px-15% pt-8">

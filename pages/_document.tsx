@@ -11,9 +11,13 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<script
+					{/* <script
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-PT10Y2SNBF"
+					></script> */}
+					<script
+						async
+						src="https://www.googletagmanager.com/gtag/js?id=G-BEZCM2H910%22%3E"
 					></script>
 					<script src="/scripts/google-analytics.js"></script>
 				</Head>

@@ -40,13 +40,11 @@ const AuthDataWrapper = ({
 					dataCallback && dataCallback(data);
 					console.log('AUTH DATA WRAPPER', data);
 
-					if (data.user && Object.keys(data.user).length && data.user._id) {
+					if (data && Object.keys(data).length && data._id) {
 						if (
 							permissions &&
-							(!data.user.permissions ||
-								!permissions.every((perm) =>
-									data.user.permissions.includes(perm)
-								))
+							(!data.permissions ||
+								!permissions.every((perm) => data.permissions.includes(perm)))
 						) {
 							return (
 								<main className="">

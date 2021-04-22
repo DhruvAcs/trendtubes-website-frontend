@@ -106,14 +106,15 @@ const DashboardAccountsCreatePage = () => {
 									// const data = new FormData(
 									// 	document.getElementById('new-account-form') as HTMLFormElement
 									// );
+									setHasEditedAccountData(false);
 
 									console.log('formData', formData);
 									if (formData['type'] == 'service') {
 										formData.serials = '';
 									}
 									if (formData['type'] == 'serials') {
-										formData.stock = '';
 									}
+									formData.stock = '';
 									try {
 										await BackendApi.createAccount(formData);
 										setPopupMessage('Success');
@@ -183,9 +184,29 @@ const DashboardAccountsCreatePage = () => {
 														</select>
 													</div>
 												</div>
+												{/* <div className="col-span-1">
+													<p className="font-medium text-primary-text">
+														Product Image Url
+													</p>
+													<p className="text-base truncate">Add an image url</p>
+													<textarea
+														className="w-full mt-4 bg-tertiary-bg border-none rounded-md"
+														style={{
+															height: '40px',
+															minHeight: '40px',
+															maxHeight: '40px',
+														}}
+														onChange={(e) => {
+															!hasEditedAccountData &&
+																setHasEditedAccountData(true);
+															handleFormChange(e);
+														}}
+														name="tags"
+													></textarea>
+												</div> */}
 												<div className="col-span-2">
 													<p className="font-medium text-primary-text">Tags</p>
-													<p className="text-base">
+													<p className="text-base truncate">
 														Add tags like "Manual Transfer", etc (separated by
 														commas)
 													</p>
@@ -355,6 +376,7 @@ const DashboardAccountsCreatePage = () => {
 									</Button> */}
 										<input
 											type="submit"
+											disabled={!hasEditedAccountData}
 											className="bg-primary-color py-3 px-6 text-base rounded-md w-fit text-primary-text font-bold flex items-center justify-center"
 											value="Submit Form"
 										/>

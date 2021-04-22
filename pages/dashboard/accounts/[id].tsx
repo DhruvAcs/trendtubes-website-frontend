@@ -418,7 +418,7 @@ const DashboardAccountsAccountPage = () => {
 															target="_blank"
 															href={`https://dashboard.sellix.io/products/edit/${data.sellixProductId}`}
 														>
-															View Shoppy Product
+															View Sellix Product
 														</OutlineButton>
 														<div className="flex items-center">
 															<input

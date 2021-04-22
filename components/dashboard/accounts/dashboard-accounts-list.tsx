@@ -115,7 +115,7 @@ const DashboardAccountsListApp = () => {
 										<tr className="text-primary-text border-b-2 border-primary-border last:border-b-0">
 											<td className="py-4 pl-4 pr-4">
 												<div className="flex items-center space-x-3 overflow-hidden">
-													{account.sellixProductData.image_name &&
+													{/* {account.sellixProductData.image_name &&
 													account.sellixProductData.image_storage ? (
 														<div
 															className="w-9 h-9 bg-tertiary-bg rounded-full bg-cover"
@@ -127,7 +127,13 @@ const DashboardAccountsListApp = () => {
 														/>
 													) : (
 														<div className="w-9 h-9 bg-tertiary-bg rounded-full" />
-													)}
+													)} */}
+													<div className="w-9 h-9 bg-quartiary-bg rounded-full flex items-center justify-center text-primary-color">
+														<FontAwesomeIcon
+															icon={platformIcon}
+															style={{ fontSize: '20px' }}
+														/>
+													</div>
 													<p className="whitespace-nowrap truncate">
 														{account.sellixProductData.title || 'No title'}
 													</p>
@@ -146,9 +152,11 @@ const DashboardAccountsListApp = () => {
 													? account.sellixProductData.stock
 													: 'Unlimited'}
 											</td>
-											<td className="py-4 pr-4 truncate">
-												{account.sellixProductData.description ||
-													'No description'}
+											<td className="py-4 pr-4 overflow-hidden">
+												<div className="truncate">
+													{account.sellixProductData.description ||
+														'No description'}
+												</div>
 											</td>
 											<td className="py-4 pr-4 relative">
 												<div>${account.sellixProductData.price}</div>

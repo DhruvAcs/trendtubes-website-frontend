@@ -5,6 +5,7 @@ import Header from '../components/header';
 import { AccountsListApp } from '../components/accounts/accounts-list-4';
 import MobileHeader from '../components/mobile-header';
 import { NextSeo } from 'next-seo';
+// import AdSense from 'react-adsense';
 
 const HomePage = () => {
 	const mainContentRef = createRef<HTMLDivElement>();
@@ -13,6 +14,7 @@ const HomePage = () => {
 		// mainContentRef.current!.style.marginTop = `${
 		// 	headerRef.current!.getBoundingClientRect().height
 		// }px)`;
+		// ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
 	}, []);
 
 	const [showMobileModal, setShowMobileModal] = useState<boolean>(false);
@@ -28,6 +30,7 @@ const HomePage = () => {
 				<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" />
 				{/* <script src="https://shoppy.gg/api/embed.js"></script> */}
 				<script src="https://cdn.sellix.io/static/js/embed.js"></script>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<title>Accounts</title>
 			</Head>
 			<NextSeo
@@ -80,6 +83,18 @@ const HomePage = () => {
 						Securely buy high quality accounts for Twitch, YouTube, & more.
 					</p>
 					<hr className="mt-8" />
+					<div className="">
+						<ins
+							className="adsbygoogle"
+							style={{
+								display: 'inline-block',
+								width: '200px',
+								height: '500px',
+							}}
+							data-ad-client="ca-pub-7242205437755895"
+							data-ad-slot="7654739875"
+						></ins>
+					</div>
 				</section>
 
 				<AccountsListApp />

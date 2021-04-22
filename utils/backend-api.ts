@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_PREURL = 'https://api.trendtubes.com';
+const API_PREURL =
+	process.env.MODE == 'production'
+		? 'https://api.trendtubes.com'
+		: 'http://localhost:3005';
 // const API_PREURL = 'http://localhost:3005';
 axios.defaults.withCredentials = true;
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';

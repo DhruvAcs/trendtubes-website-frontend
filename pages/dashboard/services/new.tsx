@@ -94,7 +94,11 @@ const DashboardAccountsCreatePage = () => {
 								ref={formRef}
 								id="new-account-form"
 								method="POST"
-								action="http://localhost:3005/accounts"
+								action={
+									process.env.MODE == 'production'
+										? `https://api.trendtubes.com/services`
+										: `http://localhost:3005/services`
+								}
 								onSubmit={async (e) => {
 									e.preventDefault();
 									// const data = new FormData(formRef.current as HTMLFormElement);
@@ -103,6 +107,7 @@ const DashboardAccountsCreatePage = () => {
 									// );
 
 									console.log('formData', formData);
+									setHasEditedFormData(false);
 									// if (formData['type'] == 'service') {
 
 									//   delete formData['accounts'];
@@ -251,7 +256,7 @@ const DashboardAccountsCreatePage = () => {
 									</Button> */}
 										<input
 											type="submit"
-											// disabled={!hasEditedFormData}
+											disabled={!hasEditedFormData}
 											className={
 												'bg-primary-color cursor-pointer text-primary-text py-3 px-6 text-base rounded-md w-fit font-bold flex items-center justify-center'
 											}

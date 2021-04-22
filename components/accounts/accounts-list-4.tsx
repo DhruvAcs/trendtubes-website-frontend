@@ -258,7 +258,7 @@ const AccountsListApp = () => {
 															<div className="flex items-center justify-between">
 																<div className="flex items-center space-x-4 overflow-hidden">
 																	<div>
-																		{account.sellixProductData.image?.url ? (
+																		{/* {account.sellixProductData.image?.url ? (
 																			<div
 																				className="w-14 h-14 bg-quartiary-bg rounded-full bg-cover"
 																				style={{
@@ -267,7 +267,13 @@ const AccountsListApp = () => {
 																			/>
 																		) : (
 																			<div className="w-14 h-14 bg-quartiary-bg rounded-full" />
-																		)}
+																		)} */}
+																		<div className="w-14 h-14 bg-quartiary-bg rounded-full flex items-center justify-center text-primary-color">
+																			<FontAwesomeIcon
+																				icon={platformIcon}
+																				style={{ fontSize: '28px' }}
+																			/>
+																		</div>
 																	</div>
 																	<div className="overflow-hidden">
 																		<p className="text-primary-text font-medium leading-none pr-4 whitespace-nowrap truncate">

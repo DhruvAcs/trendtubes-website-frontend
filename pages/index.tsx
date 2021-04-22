@@ -41,6 +41,7 @@ const HomePage = () => {
 					href="https://unpkg.com/flickity@2/dist/flickity.min.css"
 				/>
 				<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" />
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<title>Home | TrendTubes</title>
 			</Head>
 			<NextSeo
@@ -101,7 +102,19 @@ const HomePage = () => {
 										<div className="flex items-center w-64 lg:w-auto mt-30 lg:mt-0">
 											<img src="static/undraw-final.png" />
 										</div>
-										<div className="w-full flex items-center">
+										<div className="w-full flex items-center relative">
+											<div className="absolute top-0 left-0">
+												<ins
+													className="adsbygoogle"
+													style={{
+														display: 'inline-block',
+														width: '200px',
+														height: '500px',
+													}}
+													data-ad-client="ca-pub-7242205437755895"
+													data-ad-slot="7654739875"
+												></ins>
+											</div>
 											<div>
 												<h1 className="text-4xl leading-normal lg:text-5xl lg:leading-normal">
 													{/* The Place For{' '}

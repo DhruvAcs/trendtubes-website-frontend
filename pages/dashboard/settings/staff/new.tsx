@@ -25,6 +25,16 @@ const DashboardStaffAccountNewPage = () => {
 		if (!router.isReady) return;
 
 		// codes using router.query
+		// var form = document.querySelector('form');
+		// form!.addEventListener(
+		// 	'submit',
+		// 	function () {
+		// 		document
+		// 			.querySelector('input[type="submit"]')!
+		// 			.setAttribute('disabled', 'disabled');
+		// 	},
+		// 	false
+		// );
 		setIsLoaded(true);
 	}, [router.isReady]);
 
@@ -91,7 +101,11 @@ const DashboardStaffAccountNewPage = () => {
 								ref={formRef}
 								id="new-account-form"
 								method="POST"
-								action="http://localhost:3005/accounts"
+								action={
+									process.env.MODE == 'production'
+										? `https://api.trendtubes.com/accounts`
+										: `http://localhost:3005/accounts`
+								}
 								onSubmit={async (e) => {
 									e.preventDefault();
 									// const data = new FormData(formRef.current as HTMLFormElement);

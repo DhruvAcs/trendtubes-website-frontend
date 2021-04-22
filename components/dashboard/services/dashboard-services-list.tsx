@@ -109,8 +109,10 @@ const DashboardServicesListApp = () => {
 											<td className="py-4 pr-4 truncate">
 												{service.category || 'n/a'}
 											</td>
-											<td className="py-4 pr-4 relative">
-												<div>{service.description || 'No description'}</div>
+											<td className="py-4 pr-4 relative overflow-hidden">
+												<div className="truncate">
+													{service.description || 'No description'}
+												</div>
 												<div className="absolute h-full flex items-center right-4 top-0 bottom-0 space-x-6">
 													<a
 														className="flex items-center space-x-2 text-primary-color"

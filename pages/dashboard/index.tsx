@@ -53,7 +53,7 @@ const DashboardIndexPage = () => {
 							</div>
 							<div className="p-6 bg-secondary-bg rounded-md col-span-2">
 								<div className="flex items-center justify-between w-full">
-									<h5 className="">Shoppy Store</h5>
+									<h5 className="">Sellix Store</h5>
 									<p className="p-2 bg-primary-triadic-color-1 bg-opacity-10 text-primary-triadic-color-1 rounded-md text-base w-fit">
 										Connected
 									</p>
@@ -62,9 +62,77 @@ const DashboardIndexPage = () => {
 								<div className="overflow-hidden truncate">
 									<a
 										className="text-primary-color"
-										href="https://shoppy.gg/home"
+										href="https://dashboard.sellix.io/"
 									>
-										https://shoppy.gg/home
+										https://dashboard.sellix.io/
+									</a>
+								</div>
+							</div>
+							<div className="p-6 bg-secondary-bg rounded-md col-span-2">
+								<div className="flex items-center justify-between w-full">
+									<h5 className="">Netlify (Frontend)</h5>
+									<p className="p-2 bg-primary-triadic-color-1 bg-opacity-10 text-primary-triadic-color-1 rounded-md text-base w-fit">
+										Connected
+									</p>
+								</div>
+								<hr className="my-3" />
+								<div className="overflow-hidden truncate">
+									<a
+										className="text-primary-color"
+										href="https://app.netlify.com/"
+									>
+										https://app.netlify.com/
+									</a>
+								</div>
+							</div>
+							<div className="p-6 bg-secondary-bg rounded-md col-span-2">
+								<div className="flex items-center justify-between w-full">
+									<h5 className="">Vultr (Backend)</h5>
+									<p className="p-2 bg-primary-triadic-color-1 bg-opacity-10 text-primary-triadic-color-1 rounded-md text-base w-fit">
+										Connected
+									</p>
+								</div>
+								<hr className="my-3" />
+								<div className="overflow-hidden truncate">
+									<a
+										className="text-primary-color"
+										href="https://my.vultr.com/"
+									>
+										https://my.vultr.com/
+									</a>
+								</div>
+							</div>
+							<div className="p-6 bg-secondary-bg rounded-md col-span-2">
+								<div className="flex items-center justify-between w-full">
+									<h5 className="">MongoDB (Database)</h5>
+									<p className="p-2 bg-primary-triadic-color-1 bg-opacity-10 text-primary-triadic-color-1 rounded-md text-base w-fit">
+										Connected
+									</p>
+								</div>
+								<hr className="my-3" />
+								<div className="overflow-hidden truncate">
+									<a
+										className="text-primary-color"
+										href="https://cloud.mongodb.com/"
+									>
+										https://cloud.mongodb.com/
+									</a>
+								</div>
+							</div>
+							<div className="p-6 bg-secondary-bg rounded-md col-span-2">
+								<div className="flex items-center justify-between w-full">
+									<h5 className="">GoDaddy (Domain)</h5>
+									<p className="p-2 bg-primary-triadic-color-1 bg-opacity-10 text-primary-triadic-color-1 rounded-md text-base w-fit">
+										Connected
+									</p>
+								</div>
+								<hr className="my-3" />
+								<div className="overflow-hidden truncate">
+									<a
+										className="text-primary-color"
+										href="https://account.godaddy.com/products"
+									>
+										https://account.godaddy.com/products
 									</a>
 								</div>
 							</div>

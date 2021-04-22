@@ -25,6 +25,7 @@ const ServicesPage = () => {
 					href="https://unpkg.com/flickity@2/dist/flickity.min.css"
 				/>
 				<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" />
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<title>Services</title>
 			</Head>
 			{/* <Header ref={headerRef} /> */}
@@ -78,6 +79,18 @@ const ServicesPage = () => {
 						creation business.
 					</p>
 					<hr className="mt-8" />
+					<div className="">
+						<ins
+							className="adsbygoogle"
+							style={{
+								display: 'inline-block',
+								width: '200px',
+								height: '500px',
+							}}
+							data-ad-client="ca-pub-7242205437755895"
+							data-ad-slot="7654739875"
+						></ins>
+					</div>
 				</section>
 
 				<ServicesListApp />

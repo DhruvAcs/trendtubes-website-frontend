@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_PREURL =
-	process.env.MODE == 'production'
+	process.env.NEXT_PUBLIC_MODE == 'production'
 		? 'https://api.trendtubes.com'
 		: 'http://localhost:3005';
 // const API_PREURL = 'http://localhost:3005';

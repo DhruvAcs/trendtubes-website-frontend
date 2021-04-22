@@ -102,7 +102,7 @@ const DashboardStaffAccountNewPage = () => {
 								id="new-account-form"
 								method="POST"
 								action={
-									process.env.MODE == 'production'
+									process.env.NEXT_PUBLIC_MODE == 'production'
 										? `https://api.trendtubes.com/accounts`
 										: `http://localhost:3005/accounts`
 								}
